@@ -6,10 +6,10 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#0e1216",
-      glass:"rgba(14, 18, 22,0.3)"
+      glass:"rgba(	14, 18, 22,0.7)"
     },
     appeal: {
-      main: "#ffc86a",
+      main: "#EFB15D",
     },
     light: {
       main: "#E5E3E5",
@@ -23,7 +23,7 @@ export const theme = createTheme({
 theme.typography.logo = {
   fontSize: "14px",
   fontWeight: "bolder",
-  fontFamily: "Oswald",
+  fontFamily: "Julius Sans One",
   color: theme.palette.neutral.main,
   "@media (min-width:600px)": {
     fontSize: "20px",
@@ -36,9 +36,9 @@ theme.typography.logo = {
 theme.typography.h1 = {
     lineHeight: "1.25",
     whiteSpace: "nowrap",
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: "32px",
-    fontFamily: "Oswald",
+    fontFamily: "Julius Sans One",
     "@media (min-width:900px) ": {
       fontSize: "48px",
     },

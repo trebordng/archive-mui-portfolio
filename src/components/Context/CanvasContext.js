@@ -1,7 +1,7 @@
 import create from "zustand";
 
 export const ProgressState = create((set) => ({
-  intro: true,
+  intro: false,
   showAnchors: {
     AboutMe: false,
     Portrait:false

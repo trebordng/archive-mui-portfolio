@@ -51,6 +51,7 @@ const Header = () => {
     var oldScroll = 0;
 
     window.addEventListener("scroll", () => {
+      console.log(window.scrollY, window.pageYOffset);
       anchors.forEach((anchor) => {
         const startY = document.getElementById(anchor.slug)?.offsetTop;
         const endY =
@@ -58,6 +59,7 @@ const Header = () => {
           document.getElementById(anchor.slug)?.clientHeight;
         const currentY = window.scrollY;
         if (startY - 600 <= currentY && currentY < endY - 600) {
+          //   window.history.pushState(null, null, "#" + anchor.slug);
           if (currentY > oldScroll) {
             setDirection("left");
             setNavbar(false);
@@ -66,7 +68,6 @@ const Header = () => {
             setNavbar(true);
           }
           oldScroll = currentY;
-          //   window.history.pushState(null, null, "#" + anchor.slug);
           setCurrentAnchor(anchor.slug);
         }
       });
@@ -128,7 +129,7 @@ const Header = () => {
             }}
           >
             {anchors.map((anchor, index) => (
-              <Zoom in={!intro}>
+              <Zoom in={!intro} key={index}>
                 <Button
                   variant="contained"
                   sx={{
@@ -150,7 +151,6 @@ const Header = () => {
                       1250 - index * 50
                     }ms, border-radius 0.5s,rotate 0.5s !important`,
                   }}
-                  key={index}
                   onClick={() => {
                     navigateAnchor(anchor.slug);
                   }}
@@ -169,7 +169,6 @@ const Header = () => {
                   sx={{
                     fontWeight: "700",
                     fontSize: "12px",
-                    fontFamily: "Lora",
                     color:
                       anchor.slug === currentAnchor
                         ? "appeal.main"

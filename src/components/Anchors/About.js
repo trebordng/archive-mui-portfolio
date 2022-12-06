@@ -75,7 +75,7 @@ const About = () => {
         id="Portrait"
       >
         <Fade
-          in={showAnchors["Portrait"]}
+          in={showAnchors["Portrait"]&&showAnchors["AboutMe"]}
           timeout={1000}
           style={{ transitionDelay: 1000 }}
         >
@@ -90,7 +90,7 @@ const About = () => {
               backgroundSize: "cover",
               backgroundPosition: "60% 20%",
               backgroundColor: "appeal.main",
-              backgroundImage: `linear-gradient(to bottom, rgba(	14, 18, 22, 0.4), rgba(	14, 18, 22, 0.4)),
+              backgroundImage: `linear-gradient(to bottom, rgba(	14, 18, 22, 0.25), rgba(	14, 18, 22, 0.25)),
         url("portrait.png")`,
               "@media (min-width:900px)": {
                 width: "600px",

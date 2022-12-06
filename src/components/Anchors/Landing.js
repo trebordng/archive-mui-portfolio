@@ -1,4 +1,4 @@
-import { Box, Button, Fade, Typography } from "@mui/material";
+import { Box, Button, Divider, Fade, Typography } from "@mui/material";
 import React from "react";
 import { ProgressState } from "../Context/CanvasContext";
 
@@ -18,13 +18,14 @@ const Landing = () => {
           borderRadius: "10px",
           display: "flex",
           flexDirection: "column",
+          position: "relative",
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
           height: "calc(100vh - 82px)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundImage: `linear-gradient(to bottom, rgba(	14, 18, 22, 0.7), rgba(	14, 18, 22, 0.9)),
+          backgroundImage: `linear-gradient(to bottom, rgba(	14, 18, 22, 1), rgba(	14, 18, 22, 0.5)),
           url("landing.jpg")`,
           "@media (min-width:600px)": {
             height: "calc(100vh - 90px)",
@@ -46,6 +47,16 @@ const Landing = () => {
         >
           Resume
         </Button>
+        <Divider
+          orientation="vertical"
+          sx={{
+            backgroundColor: "neutral.main",
+            position: "absolute",
+            bottom: "-18px",
+            left: "50%",
+            height: "20%",
+          }}
+        />
       </Box>
     </Fade>
   );
