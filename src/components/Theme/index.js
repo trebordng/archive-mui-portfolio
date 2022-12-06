@@ -6,7 +6,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#0e1216",
-      glass:"rgba(14, 18, 22,0.7)"
+      glass:"rgba(14, 18, 22,0.3)"
     },
     appeal: {
       main: "#ffc86a",

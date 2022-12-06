@@ -5,12 +5,17 @@ import { ProgressState } from "../Context/CanvasContext";
 const Landing = () => {
   const { intro } = ProgressState();
 
+  window.addEventListener("scroll", () => {
+    const parallax = document.getElementById("Landing");
+    const effect = window.scrollY / 8;
+    parallax.style.backgroundPositionY = (effect > 100 ? 100 : effect) + "%";
+  });
   return (
     <Fade in={!intro} timeout={500} style={{ transitionDelay: 1450 }}>
       <Box
         id="Landing"
         sx={{
-            borderRadius:"10px",
+          borderRadius: "10px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -19,19 +24,17 @@ const Landing = () => {
           height: "calc(100vh - 82px)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPosition: "30% 20%",
-          backgroundAttachment: "fixed",
           backgroundImage: `linear-gradient(to bottom, rgba(	14, 18, 22, 0.7), rgba(	14, 18, 22, 0.9)),
-        url("landing.jpg")`,
+          url("landing.jpg")`,
           "@media (min-width:600px)": {
             height: "calc(100vh - 90px)",
           },
         }}
       >
-        <Typography variant="h1" sx={{ color: "appeal.main" }}>
+        <Typography variant="h1" sx={{ color: "appeal.main", zIndex: 1 }}>
           Robert Tran.
         </Typography>
-        <Typography variant="h2" sx={{ color: "light.main" }}>
+        <Typography variant="h2" sx={{ color: "light.main", zIndex: 1 }}>
           Front End Developer
         </Typography>
         <Button
