@@ -46,12 +46,27 @@ const About = () => {
         rowGap: "30px",
         justifyContent: "space-between",
         alignItems: "center",
+        // "@media (min-width:900px)": {
+        //   flexDirection: "row-reverse",
+        // },
         "@media (min-width:1200px)": {
           padding: "144px 74px",
         },
       }}
       container
     >
+      <Grid item xs={12} md={5.5} id="AboutMe">
+        {AboutMe.map((element, index) => (
+          <Fade
+            key={index}
+            in={showAnchors["AboutMe"]}
+            timeout={1000}
+            style={{ transitionDelay: index * 500 }}
+          >
+            {element}
+          </Fade>
+        ))}
+      </Grid>
       <Grid
         item
         xs={12}
@@ -59,7 +74,11 @@ const About = () => {
         sx={{ display: "flex", justifyContent: "center" }}
         id="Portrait"
       >
-        <Fade in={showAnchors["Portrait"]} timeout={1000} >
+        <Fade
+          in={showAnchors["Portrait"]}
+          timeout={1000}
+          style={{ transitionDelay: 1000 }}
+        >
           <Box
             sx={{
               borderRadius: "10px",
@@ -82,18 +101,6 @@ const About = () => {
             }}
           />
         </Fade>
-      </Grid>
-      <Grid item xs={12} md={5.5} id="AboutMe">
-        {AboutMe.map((element, index) => (
-          <Fade
-            key={index}
-            in={showAnchors["AboutMe"]}
-            timeout={1000}
-            style={{ transitionDelay: (index + 1) * 500 }}
-          >
-            {element}
-          </Fade>
-        ))}
       </Grid>
     </Grid>
   );
