@@ -1,10 +1,11 @@
 import create from "zustand";
 
 export const ProgressState = create((set) => ({
-  intro: false,
+  intro: true,
   showAnchors: {
     AboutMe: false,
-    Portrait:false
+    Portrait:false,
+    Skills:false
   },
 
   setIntro: (value) => set(() => ({ intro: value })),

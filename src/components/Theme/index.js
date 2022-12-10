@@ -6,7 +6,6 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#0e1216",
-      glass:"rgba(	14, 18, 22,0.7)"
     },
     appeal: {
       main: "#EFB15D",
@@ -34,52 +33,60 @@ theme.typography.logo = {
 };
 
 theme.typography.h1 = {
-    lineHeight: "1.25",
-    whiteSpace: "nowrap",
-    fontWeight: 600,
-    fontSize: "32px",
-    fontFamily: "Julius Sans One",
-    "@media (min-width:900px) ": {
-      fontSize: "48px",
-    },
-  };
+  lineHeight: "1.25",
+  whiteSpace: "nowrap",
+  fontWeight: 900,
+  fontSize: "32px",
+  fontFamily: "Julius Sans One",
+  "@media (min-width:900px) ": {
+    fontSize: "48px",
+  },
+};
 
-  theme.typography.h2 = {
-    lineHeight: "1",
-    fontWeight: "lighter",
-    fontSize: "16px",
-    "@media (min-width:900px) ": {
-        fontSize: "24px",
-      },
-  };
+theme.typography.h2 = {
+  lineHeight: "1",
+  fontWeight: "400",
+  fontSize: "16px",
+  "@media (min-width:900px) ": {
+    fontSize: "24px",
+  },
+};
 
-  theme.typography.intro= {
-    textAlign:"center",
-    lineHeight: "1",
-    fontWeight: "light",
-    fontSize: "32px",
-  };
+theme.typography.intro = {
+  textAlign: "center",
+  lineHeight: "1",
+  fontWeight: "light",
+  fontFamily: "Julius Sans One",
+  fontSize: "32px",
+};
 
-  theme.typography.h3 = {
-    lineHeight: "1.25",
-    fontWeight: "light",
-    fontSize: "32px",
+theme.typography.h3 = {
+  lineHeight: "1.25",
+  fontWeight: "light",
+  fontSize: "32px",
+};
 
-  };
-
-  theme.typography.p = {
-    wordBreak:"beak-all",
-    fontWeight:"light",
+theme.typography.p = {
+  wordBreak: "beak-all",
+  fontWeight: "light",
   lineHeight: "1.75",
   fontSize: "16px",
 };
 
-  export const IconLink = styled(Link)((props) => ({
-    fontSize:"1.75rem",
-    padding:"5px",
-    display: "flex",
-    color: theme.palette.neutral.main,
-    "&:hover": {
-      color: theme.palette.appeal.main,
-    },
-  }));
+theme.typography.cardText = {
+  fontWeight: "light",
+  lineHeight: "1.25",
+  fontSize: "14px",
+  "@media (min-width:900px) ": {
+    fontSize: "18px",
+  },
+};
+export const IconLink = styled(Link)((props) => ({
+  fontSize: "1.75rem",
+  padding: "5px",
+  display: "flex",
+  color: theme.palette.neutral.main,
+  "&:hover": {
+    color: theme.palette.appeal.main,
+  },
+}));

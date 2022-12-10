@@ -51,14 +51,15 @@ const Header = () => {
     var oldScroll = 0;
 
     window.addEventListener("scroll", () => {
-      console.log(window.scrollY, window.pageYOffset);
       anchors.forEach((anchor) => {
         const startY = document.getElementById(anchor.slug)?.offsetTop;
         const endY =
           document.getElementById(anchor.slug)?.offsetTop +
           document.getElementById(anchor.slug)?.clientHeight;
         const currentY = window.scrollY;
-        if (startY - 600 <= currentY && currentY < endY - 600) {
+        var difference = 700/920 * window.screen.height
+        console.log(window.screen.height)
+        if (startY - difference <= currentY && currentY < endY - difference) {
           //   window.history.pushState(null, null, "#" + anchor.slug);
           if (currentY > oldScroll) {
             setDirection("left");
@@ -76,8 +77,10 @@ const Header = () => {
         const endY =
           document.getElementById(key)?.offsetTop +
           document.getElementById(key)?.clientHeight;
+          var difference = 700/920 * window.screen.height
+
         const currentY = window.scrollY;
-        if (startY - 600 <= currentY && currentY < endY - 600) {
+        if (startY -difference <= currentY && currentY < endY -difference) {
           setShowAnchors(key, true);
         }
       }

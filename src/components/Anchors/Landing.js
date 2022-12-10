@@ -1,4 +1,10 @@
-import { Box, Button, Divider, Fade, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Fade,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { ProgressState } from "../Context/CanvasContext";
 
@@ -7,8 +13,8 @@ const Landing = () => {
 
   window.addEventListener("scroll", () => {
     const parallax = document.getElementById("Landing");
-    const effect = window.scrollY / 8;
-    parallax.style.backgroundPositionY = (effect > 100 ? 100 : effect) + "%";
+    const effect = window.scrollY/8;
+    parallax.style.backgroundPositionY = effect + "px";
   });
   return (
     <Fade in={!intro} timeout={500} style={{ transitionDelay: 1450 }}>
@@ -27,6 +33,7 @@ const Landing = () => {
           backgroundSize: "cover",
           backgroundImage: `linear-gradient(to bottom, rgba(	14, 18, 22, 1), rgba(	14, 18, 22, 0.5)),
           url("landing.jpg")`,
+          willChange: "background-position",
           "@media (min-width:600px)": {
             height: "calc(100vh - 90px)",
           },
@@ -54,7 +61,7 @@ const Landing = () => {
             position: "absolute",
             bottom: "-18px",
             left: "50%",
-            height: "20%",
+            height: "25%",
           }}
         />
       </Box>

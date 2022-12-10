@@ -35,7 +35,7 @@ const Intro = () => {
           onEntered={() => {
             setTimeout(() => {
               setLoading(false);
-            }, 1500);
+            }, 2000);
           }}
         >
           <Typography variant="intro" sx={{padding:"0 24px"}}>

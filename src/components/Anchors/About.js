@@ -1,9 +1,65 @@
+import {
+  faAws,
+  faFigma,
+  faGithub,
+  faHtml5,
+  faNodeJs,
+  faReact,
+  faSquareJs,
+} from "@fortawesome/free-brands-svg-icons";
+import { faCube } from "@fortawesome/free-solid-svg-icons";
 import { Box, Fade, Grid, Typography } from "@mui/material";
 import React from "react";
 import { ProgressState } from "../Context/CanvasContext";
+import SkillCard from "../Utils/SkillCard";
 
 const About = () => {
   const { showAnchors } = ProgressState();
+  const SkillList = [
+    {
+      icon: faReact,
+      description: "My main Javascript library for front-end development.",
+      title: "React/Next.js",
+    },
+    {
+      icon: faHtml5,
+      description: "Mainly used for page skeleton and custom design, or libraries such as MUI, Bootstrap",
+      title: "HTML5/CSS",
+    },
+    {
+      icon: faSquareJs,
+      description: "DOM element control and algorithm",
+      title: "Javascript",
+    },
+    {
+      icon: faNodeJs,
+      description: "Used for backend development",
+      title: "NodeJs",
+    },
+    ,
+    {
+      icon: faCube,
+      description: "Basic understanding of 3d development",
+      title: "Three.js",
+    },
+    {
+      icon: faGithub,
+      description: "Project Deployment and Management",
+      title: "Github",
+    },
+    {
+      icon: faAws,
+      description: "Deployment and API",
+      title: "AWS Amplify",
+    },
+    {
+      icon: faFigma,
+      description:
+        "Basic understanding of design tool such as Figma, Photoshop,...",
+      title: "Figma",
+    },
+  ];
+
   const AboutMe = [
     <Typography variant="h3" sx={{ color: "appeal.main" }}>
       About Me
@@ -50,6 +106,7 @@ const About = () => {
         //   flexDirection: "row-reverse",
         // },
         "@media (min-width:1200px)": {
+          rowGap: "144px",
           padding: "144px 74px",
         },
       }}
@@ -61,7 +118,7 @@ const About = () => {
             key={index}
             in={showAnchors["AboutMe"]}
             timeout={1000}
-            style={{ transitionDelay: index * 500 }}
+            style={{ transitionDelay: index * 700 }}
           >
             {element}
           </Fade>
@@ -75,9 +132,9 @@ const About = () => {
         id="Portrait"
       >
         <Fade
-          in={showAnchors["Portrait"]&&showAnchors["AboutMe"]}
+          in={showAnchors["Portrait"] && showAnchors["AboutMe"]}
           timeout={1000}
-          style={{ transitionDelay: 1000 }}
+          style={{ transitionDelay: 1400 }}
         >
           <Box
             sx={{
@@ -101,6 +158,32 @@ const About = () => {
             }}
           />
         </Fade>
+      </Grid>
+
+      <Grid
+        id="Skills"
+        xs={12}
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "15px",
+          justifyContent: "center",
+        }}
+      >
+        {SkillList.map((skill, index) => (
+          <SkillCard
+            key={index}
+            show={
+              showAnchors["Skills"] &&
+              showAnchors["Portrait"] &&
+              showAnchors["AboutMe"]
+            }
+            index={index}
+            icon={skill.icon}
+            title={skill.title}
+            description={skill.description}
+          />
+        ))}
       </Grid>
     </Grid>
   );
