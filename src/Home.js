@@ -1,15 +1,18 @@
-import React from 'react'
-import Layout from './components/Layout'
-import Landing from './components/Anchors/Landing'
-import About from './components/Anchors/About'
+import React, { useEffect,useState } from "react";
+import Layout from "./components/Layout";
+import Landing from "./components/Anchors/Landing";
+import About from "./components/Anchors/About";
+import Experience from "./components/Anchors/Experience";
 
 const Home = () => {
+  
   return (
     <Layout>
-        <Landing />
-        <About />
+      <Landing />
+      <About />
+      <Experience />
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

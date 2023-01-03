@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&display=swap');
-body {
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oxygen:wght@300;400;700&display=swap');body {
   margin: 0;
-  font-family: 'Barlow Semi Condensed', serif;
+  font-family: 'Oxygen', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
@@ -23,8 +22,18 @@ body::-webkit-scrollbar {
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
 
-.list-icon{
-  color:#EFB15D;
-  font-size:1.75rem;
+.list-icon {
+  color: #EFB15D;
+  font-size: 1.75rem;
 }
 
+.landing-image {
+  z-index: -1;
+  object-fit: cover;
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}

@@ -6,6 +6,8 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#0e1216",
+      glass: "rgba(14, 18, 22,0.7)",
+      lighter:"#161c22"
     },
     appeal: {
       main: "#EFB15D",
@@ -20,9 +22,9 @@ export const theme = createTheme({
 });
 
 theme.typography.logo = {
-  fontSize: "14px",
+  fontSize: "16px",
   fontWeight: "bolder",
-  fontFamily: "Julius Sans One",
+  fontFamily: "Cormorant Garamond",
   color: theme.palette.neutral.main,
   "@media (min-width:600px)": {
     fontSize: "20px",
@@ -37,7 +39,7 @@ theme.typography.h1 = {
   whiteSpace: "nowrap",
   fontWeight: 900,
   fontSize: "32px",
-  fontFamily: "Julius Sans One",
+  fontFamily: "Cormorant Garamond",
   "@media (min-width:900px) ": {
     fontSize: "48px",
   },
@@ -55,14 +57,15 @@ theme.typography.h2 = {
 theme.typography.intro = {
   textAlign: "center",
   lineHeight: "1",
-  fontWeight: "light",
-  fontFamily: "Julius Sans One",
+  fontWeight: "lighter",
+  fontFamily: "Cormorant Garamond",
   fontSize: "32px",
 };
 
 theme.typography.h3 = {
   lineHeight: "1.25",
   fontWeight: "light",
+  fontFamily: "Cormorant Garamond",
   fontSize: "32px",
 };
 
@@ -73,17 +76,33 @@ theme.typography.p = {
   fontSize: "16px",
 };
 
+theme.typography.languages = {
+  wordBreak: "beak-all",
+  fontWeight: "light",
+  lineHeight: "1.75",
+  fontSize: "12px",
+};
+
 theme.typography.cardText = {
   fontWeight: "light",
   lineHeight: "1.25",
   fontSize: "14px",
   "@media (min-width:900px) ": {
-    fontSize: "18px",
+    fontSize: "16px",
   },
 };
 export const IconLink = styled(Link)((props) => ({
   fontSize: "1.75rem",
   padding: "5px",
+  display: "flex",
+  color: theme.palette.neutral.main,
+  "&:hover": {
+    color: theme.palette.appeal.main,
+  },
+}));
+
+export const ProjectLink = styled(Link)((props) => ({
+  fontSize: "1.75rem",
   display: "flex",
   color: theme.palette.neutral.main,
   "&:hover": {

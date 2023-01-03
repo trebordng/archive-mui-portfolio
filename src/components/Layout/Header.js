@@ -26,7 +26,7 @@ const Header = () => {
     { name: "Home", slug: "Landing" },
     { name: "About", slug: "About" },
     { name: "Experience", slug: "Experience" },
-    { name: "Portfolio", slug: "Portfolio" },
+    // { name: "Portfolio", slug: "Portfolio" },
     { name: "Contact", slug: "Contact" },
   ];
 
@@ -58,15 +58,14 @@ const Header = () => {
           document.getElementById(anchor.slug)?.clientHeight;
         const currentY = window.scrollY;
         var difference = 700/920 * window.screen.height
-        console.log(window.screen.height)
         if (startY - difference <= currentY && currentY < endY - difference) {
           //   window.history.pushState(null, null, "#" + anchor.slug);
           if (currentY > oldScroll) {
             setDirection("left");
-            setNavbar(false);
+            // setNavbar(false);
           } else {
             setDirection("right");
-            setNavbar(true);
+            // setNavbar(true);
           }
           oldScroll = currentY;
           setCurrentAnchor(anchor.slug);
@@ -97,13 +96,11 @@ const Header = () => {
         top: "0px",
         zIndex: 9999,
         justifyContent: "space-between",
-        transition: "background-color 0.5s",
+        // transition: "background-color 0.5s",
         minHeight: "64px",
-        "@media (min-width:600px)": {
-          minHeight: "72px",
-        },
         padding: "0 24px",
         "@media (min-width:900px)": {
+          minHeight: "74px",
           padding: "0 74px",
         },
       }}
@@ -188,21 +185,24 @@ const Header = () => {
                   {anchor.name}
                   <Box
                     sx={{
-                      width: "100%",
+                      width: anchor.slug === currentAnchor ?"100%":0,
                       position: "absolute",
                       height: "2px",
                       bottom: 0,
-                      left:
-                        anchor.slug === currentAnchor
-                          ? 0
-                          : direction === "left"
-                          ? -100
-                          : 100,
+                      left:direction==="left" && 0,
+                      right:direction==="right" && 0,
+
+                      // left:
+                      //   anchor.slug === currentAnchor
+                      //     ? 0
+                      //     : direction === "left"
+                      //     ? -100
+                      //     : 100,
                       opacity: anchor.slug === currentAnchor ? 1 : 0,
                       backgroundColor: "appeal.main",
                       transition:
                         anchor.slug === currentAnchor &&
-                        "left 0.5s,opacity 0.5s",
+                        "width 0.5s",
                     }}
                   />
                 </Button>
