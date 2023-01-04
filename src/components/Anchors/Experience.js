@@ -328,7 +328,7 @@ const Experience = () => {
                       <FontAwesomeIcon icon={faUpRightFromSquare} />
                     </ProjectLink>
                   </Box>
-                  <Box sx={{ display: "flex", gap: "8px", marginTop: "8px" }}>
+                  <Box sx={{ display: "flex", gap: "8px", marginTop: "8px",flexWrap:"wrap" }}>
                     {project.languages?.map((language, index) => (
                       <Typography
                         key={index}
