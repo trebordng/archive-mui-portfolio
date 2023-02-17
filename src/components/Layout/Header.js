@@ -57,7 +57,7 @@ const Header = () => {
           document.getElementById(anchor.slug)?.offsetTop +
           document.getElementById(anchor.slug)?.clientHeight;
         const currentY = window.scrollY;
-        var difference = 700/920 * window.screen.height
+        var difference = 600/920 * window.screen.height
         if (startY - difference <= currentY && currentY < endY - difference) {
           //   window.history.pushState(null, null, "#" + anchor.slug);
           if (currentY > oldScroll) {
@@ -76,7 +76,7 @@ const Header = () => {
         const endY =
           document.getElementById(key)?.offsetTop +
           document.getElementById(key)?.clientHeight;
-          var difference = 700/920 * window.screen.height
+          var difference = 600/920 * window.screen.height
 
         const currentY = window.scrollY;
         if (startY -difference <= currentY && currentY < endY -difference) {

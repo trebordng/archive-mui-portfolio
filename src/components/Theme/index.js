@@ -70,14 +70,12 @@ theme.typography.h3 = {
 };
 
 theme.typography.p = {
-  wordBreak: "beak-all",
   fontWeight: "light",
   lineHeight: "1.75",
   fontSize: "16px",
 };
 
 theme.typography.languages = {
-  wordBreak: "beak-all",
   fontWeight: "light",
   lineHeight: "1.75",
   fontSize: "12px",

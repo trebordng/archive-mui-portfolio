@@ -216,12 +216,6 @@ const Experience = () => {
         </Box>
         <Box
           id="PortfolioProjects"
-          sx={{
-            marginTop: "64px",
-            "@media (min-width:900px)": {
-              marginTop: "74px",
-            },
-          }}
         >
           {projects?.map((project, index) => (
             <Fade
@@ -240,10 +234,12 @@ const Experience = () => {
                   display: "flex",
                   flexDirection: "column",
                   padding: "20px",
+                  marginTop: "64px",
                   justifyContent: "space-around",
                   "@media (min-width:900px)": {
+                    marginTop: "74px",
                     padding: 0,
-                    alignItems: "flex-end",
+                    alignItems: index%2===0?"flex-end":"flex-start",
                   },
                 }}
               >
@@ -254,7 +250,8 @@ const Experience = () => {
                     position: "absolute",
                     backgroundColor: "primary.main",
                     top: 0,
-                    left: 0,
+                    left: index%2==0&&0,
+                    right: index%2!=0&&0,
                     height: "100%",
                     width: "100%",
                     "@media (min-width:900px)": {
@@ -286,7 +283,7 @@ const Experience = () => {
                   sx={{
                     zIndex: 2,
                     "@media (min-width:900px)": {
-                      textAlign: "right",
+                      textAlign: index%2===0?"right":"left",
                     },
                   }}
                 >
@@ -315,7 +312,7 @@ const Experience = () => {
                     sx={{
                       display: "flex",
                       "@media (min-width:900px)": {
-                        justifyContent: "flex-end",
+                        justifyContent: index%2===0&&"flex-end",
                       },
                     }}
                   >
@@ -348,7 +345,7 @@ const Experience = () => {
                     zIndex: 2,
                     "@media (min-width:900px)": {
                       padding: "20px",
-                      textAlign: "right",
+                      textAlign: index%2===0?"right":"left",
                       backgroundColor: "primary.lighter",
                       maxWidth: "70%",
                     },

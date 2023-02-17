@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Landing from "./components/Anchors/Landing";
 import About from "./components/Anchors/About";
 import Experience from "./components/Anchors/Experience";
+import Contact from "./components/Anchors/Contact";
 
 const Home = () => {
   
@@ -11,6 +12,7 @@ const Home = () => {
       <Landing />
       <About />
       <Experience />
+      <Contact />
     </Layout>
   );
 };

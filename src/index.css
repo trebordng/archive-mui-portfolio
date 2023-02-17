@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oxygen:wght@300;400;700&display=swap');body {
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oxygen:wght@300;400;700&display=swap');
+
+body {
   margin: 0;
   font-family: 'Oxygen', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  box-sizing: border-box;
 
 }
 
@@ -36,4 +39,16 @@ body::-webkit-scrollbar {
   top: 0;
   left: 0;
   border-radius: 10px;
+}
+
+.textfield {
+  overflow-y: hidden;
+  height: 100%;
+  color: #EFB15D !important;
+  border-color: rgba(229, 227, 229, 0.2) !important
+}
+
+.textfield-label {
+  height: 100%;
+  color: #EFB15D !important
 }
