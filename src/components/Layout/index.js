@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import { ProgressState } from "../Context/CanvasContext";
 import Header from "./Header";
 import Intro from "./Intro";
+import Footer from "./Footer";
 
 const index = ({ children }) => {
   const { intro } = ProgressState();
@@ -29,6 +30,7 @@ const index = ({ children }) => {
       >
         <Header />
         {children}
+        <Footer />
       </Box>
     </React.Fragment>
   );

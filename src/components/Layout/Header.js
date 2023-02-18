@@ -11,13 +11,13 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { ProgressState } from "../Context/CanvasContext";
+import DrawerHeader from "./DrawerHeader";
 import Media from "./Media";
 
 const Header = () => {
   const theme = useTheme();
   const isMed = useMediaQuery(theme.breakpoints.down("md"));
   const { intro, showAnchors, setShowAnchors } = ProgressState();
-
   const [currentAnchor, setCurrentAnchor] = useState("Landing");
   const [navbar, setNavbar] = useState(true);
   const [direction, setDirection] = useState("left");
@@ -57,7 +57,7 @@ const Header = () => {
           document.getElementById(anchor.slug)?.offsetTop +
           document.getElementById(anchor.slug)?.clientHeight;
         const currentY = window.scrollY;
-        var difference = 600/920 * window.screen.height
+        var difference = (600 / 920) * window.screen.height;
         if (startY - difference <= currentY && currentY < endY - difference) {
           //   window.history.pushState(null, null, "#" + anchor.slug);
           if (currentY > oldScroll) {
@@ -76,10 +76,11 @@ const Header = () => {
         const endY =
           document.getElementById(key)?.offsetTop +
           document.getElementById(key)?.clientHeight;
-          var difference = 600/920 * window.screen.height
+        var difference = (600 / 920) * window.screen.height;
 
         const currentY = window.scrollY;
-        if (startY -difference <= currentY && currentY < endY -difference) {
+        if (startY - difference <= currentY && currentY < endY - difference) {
+          console.log(key);
           setShowAnchors(key, true);
         }
       }
@@ -94,7 +95,7 @@ const Header = () => {
         left: 0,
         right: 0,
         top: "0px",
-        zIndex: 9999,
+        zIndex: 99,
         justifyContent: "space-between",
         // transition: "background-color 0.5s",
         minHeight: "64px",
@@ -111,7 +112,7 @@ const Header = () => {
         </Link>
       </Slide>
       {isMed ? (
-        <Box></Box>
+        <DrawerHeader anchors={anchors} navigateAnchor={navigateAnchor} currentAnchor={currentAnchor}/>
       ) : (
         <React.Fragment>
           <Box
@@ -120,12 +121,13 @@ const Header = () => {
               height: "100vh",
               position: "fixed",
               bottom: "0px",
-              left: "32px",
+              right: "32px",
+              paddingBottom: "14px",
               zIndex: 999,
               display: "flex",
               flexDirection: "column",
               alignContent: "flex-end",
-              justifyContent: "center",
+              justifyContent: "flex-end",
             }}
           >
             {anchors.map((anchor, index) => (
@@ -185,12 +187,12 @@ const Header = () => {
                   {anchor.name}
                   <Box
                     sx={{
-                      width: anchor.slug === currentAnchor ?"100%":0,
+                      width: anchor.slug === currentAnchor ? "100%" : 0,
                       position: "absolute",
                       height: "2px",
                       bottom: 0,
-                      left:direction==="left" && 0,
-                      right:direction==="right" && 0,
+                      left: direction === "left" && 0,
+                      right: direction === "right" && 0,
 
                       // left:
                       //   anchor.slug === currentAnchor
@@ -200,9 +202,7 @@ const Header = () => {
                       //     : 100,
                       opacity: anchor.slug === currentAnchor ? 1 : 0,
                       backgroundColor: "appeal.main",
-                      transition:
-                        anchor.slug === currentAnchor &&
-                        "width 0.5s",
+                      transition: anchor.slug === currentAnchor && "width 0.5s",
                     }}
                   />
                 </Button>

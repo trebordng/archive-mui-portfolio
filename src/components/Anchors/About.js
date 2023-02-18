@@ -29,7 +29,7 @@ const About = () => {
             key={index}
             in={showAnchors["AboutMe"]}
             timeout={500}
-            style={{ transitionDelay: index * 700 }}
+            style={{ transitionDelay: 500+ index * 250 }}
           >
             {element}
           </Fade>
@@ -45,7 +45,7 @@ const About = () => {
         <Fade
           in={showAnchors["Portrait"] && showAnchors["AboutMe"]}
           timeout={500}
-          style={{ transitionDelay: 1400 }}
+          style={{ transitionDelay: 1000 }}
         >
           <Box
             sx={{
@@ -71,7 +71,7 @@ const About = () => {
         </Fade>
       </Grid>
 
-      <Grid id="Skills" xs={12}>
+      <Grid id="Skills">
         <Fade
           in={
             showAnchors["Skills"] &&

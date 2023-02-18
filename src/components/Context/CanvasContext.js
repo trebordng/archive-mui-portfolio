@@ -1,15 +1,18 @@
 import create from "zustand";
 
 export const ProgressState = create((set) => ({
-  intro: false,
+  intro: true,
   showAnchors: {
     AboutMe: false,
     Portrait:false,
     Skills:false,
+    Contact:false,
     ExperienceTitle:false,
     ExperienceList:false,
     PortfolioTitle:false,
     PortfolioProjects:false,
+    ContactTitle:false,
+    ContactBox:false
 
   },
 

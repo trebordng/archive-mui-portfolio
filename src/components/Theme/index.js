@@ -7,7 +7,7 @@ export const theme = createTheme({
     primary: {
       main: "#0e1216",
       glass: "rgba(14, 18, 22,0.7)",
-      lighter:"#161c22"
+      lighter: "#161c22",
     },
     appeal: {
       main: "#EFB15D",
@@ -20,7 +20,10 @@ export const theme = createTheme({
     },
   },
 });
-
+theme.typography.navText = {
+  fontWeight: "700",
+  fontSize: "12px"
+};
 theme.typography.logo = {
   fontSize: "16px",
   fontWeight: "bolder",
@@ -67,6 +70,13 @@ theme.typography.h3 = {
   fontWeight: "light",
   fontFamily: "Cormorant Garamond",
   fontSize: "32px",
+};
+
+theme.typography.h4 = {
+  lineHeight: "1.25",
+  fontWeight: "light",
+  fontFamily: "Cormorant Garamond",
+  fontSize: "24px",
 };
 
 theme.typography.p = {

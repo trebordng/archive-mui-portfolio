@@ -4,7 +4,7 @@ import { Box, Button, Fade, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { ProgressState } from "../Context/CanvasContext";
 import { projects, achievement } from "../Data/Projects";
-import { ProjectLink } from "../Theme";
+import ProjectCard from "../Utils/ProjectCard";
 
 const Experience = () => {
   const { showAnchors } = ProgressState();
@@ -175,9 +175,9 @@ const Experience = () => {
                           <Box
                             sx={{ color: "neutral.main", marginTop: "15px" }}
                           >
-                            {work.tasks.map((task, taskId) => (
+                            {work.tasks.map((task, taskIndex) => (
                               <Typography
-                                index={taskId}
+                                key={taskIndex}
                                 variant="p"
                                 component="p"
                                 sx={{ color: "neutral.main", marginTop: "5px" }}
@@ -194,169 +194,33 @@ const Experience = () => {
             </Grid>
           </Fade>
         </Box>
-        <Box id="PortfolioTitle">
-          <Fade
-            timeout={500}
-            in={showAnchors["PortfolioTitle"]}
-            style={{ transitionDelay: 500 }}
-          >
-            <Typography
-              variant="h3"
-              color="appeal.main"
-              sx={{
-                marginTop: "128px",
-                "@media (min-width:900px)": {
-                  marginTop: "148px",
-                },
-              }}
-            >
-              What I've Done
-            </Typography>
-          </Fade>
-        </Box>
-        <Box
-          id="PortfolioProjects"
+        <Fade
+          timeout={500}
+          in={showAnchors["PortfolioTitle"] || showAnchors["PortfolioProjects"]}
+          style={{ transitionDelay: 500 }}
         >
+          <Typography
+            id="PortfolioTitle"
+            variant="h3"
+            color="appeal.main"
+            sx={{
+              marginTop: "128px",
+              "@media (min-width:900px)": {
+                marginTop: "148px",
+              },
+            }}
+          >
+            What I've Done
+          </Typography>
+        </Fade>
+        <Box id="PortfolioProjects">
           {projects?.map((project, index) => (
-            <Fade
-              timeout={500}
+            <ProjectCard
               key={index}
-              in={
-                showAnchors["PortfolioTitle"] &&
-                showAnchors["PortfolioProjects"]
-              }
-              style={{ transitionDelay: 750 + index * 100 }}
-            >
-              <Box
-                sx={{
-                  minHeight: "400px",
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "20px",
-                  marginTop: "64px",
-                  justifyContent: "space-around",
-                  "@media (min-width:900px)": {
-                    marginTop: "74px",
-                    padding: 0,
-                    alignItems: index%2===0?"flex-end":"flex-start",
-                  },
-                }}
-              >
-                <Button
-                  sx={{
-                    borderRadius: "10px",
-                    padding: 0,
-                    position: "absolute",
-                    backgroundColor: "primary.main",
-                    top: 0,
-                    left: index%2==0&&0,
-                    right: index%2!=0&&0,
-                    height: "100%",
-                    width: "100%",
-                    "@media (min-width:900px)": {
-                      width: "60%",
-                    },
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={project.displayImage}
-                    sx={{
-                      objectFit: "cover",
-                      borderRadius: "inherit",
-                      height: "100%",
-                      width: "100%",
-                      filter: "grayscale(100%)",
-                      opacity: "0.3",
-                      transition: "all 0.5s",
-                      "@media (min-width:900px)": {
-                        "&:hover": {
-                          opacity: "0.7",
-                          filter: "none",
-                        },
-                      },
-                    }}
-                  />
-                </Button>
-                <Box
-                  sx={{
-                    zIndex: 2,
-                    "@media (min-width:900px)": {
-                      textAlign: index%2===0?"right":"left",
-                    },
-                  }}
-                >
-                  {" "}
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      color: "appeal.main",
-                    }}
-                  >
-                    {" "}
-                    {project.title}
-                  </Typography>
-                  <Typography
-                    variant="p"
-                    sx={{
-                      color: "neutral.main",
-                    }}
-                  >
-                    {" "}
-                    {project.period}
-                  </Typography>
-                </Box>
-                <Box sx={{ zIndex: 2 }}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      "@media (min-width:900px)": {
-                        justifyContent: index%2===0&&"flex-end",
-                      },
-                    }}
-                  >
-                    <ProjectLink
-                      target="_blank"
-                      rel="noopener"
-                      href={project.demo}
-                      sx={{ padding: 0 }}
-                    >
-                      <FontAwesomeIcon icon={faUpRightFromSquare} />
-                    </ProjectLink>
-                  </Box>
-                  <Box sx={{ display: "flex", gap: "8px", marginTop: "8px",flexWrap:"wrap" }}>
-                    {project.languages?.map((language, index) => (
-                      <Typography
-                        key={index}
-                        variant="languages"
-                        component="p"
-                        sx={{ color: "neutral.main" }}
-                      >
-                        {language}
-                      </Typography>
-                    ))}
-                  </Box>
-                </Box>
-                <Box
-                  sx={{
-                    borderRadius: "5px",
-                    maxWidth: "100%",
-                    zIndex: 2,
-                    "@media (min-width:900px)": {
-                      padding: "20px",
-                      textAlign: index%2===0?"right":"left",
-                      backgroundColor: "primary.lighter",
-                      maxWidth: "70%",
-                    },
-                  }}
-                >
-                  <Typography variant="p" sx={{ color: "light.main" }}>
-                    {project.description}
-                  </Typography>
-                </Box>
-              </Box>
-            </Fade>
+              index={index}
+              project={project}
+              showAnchors={showAnchors}
+            />
           ))}
         </Box>
       </Box>

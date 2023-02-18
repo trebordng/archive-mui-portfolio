@@ -3,6 +3,7 @@ import { Card, CardContent, Fade, Typography } from "@mui/material";
 import React from "react";
 
 const SkillCard = (props) => {
+  const { icon, title, description } = props;
   return (
     <Card
       sx={{
@@ -32,12 +33,12 @@ const SkillCard = (props) => {
           justifyContent: "center",
         }}
       >
-        <FontAwesomeIcon icon={props.icon} className="list-icon" />
+        <FontAwesomeIcon icon={icon} className="list-icon" />
         <Typography variant="cardText" sx={{ color: "appeal.main" }}>
-          {props.title}
+          {title}
         </Typography>
         <Typography variant="cardText" sx={{ color: "light.main" }}>
-          {props.description}{" "}
+          {description}{" "}
         </Typography>
       </CardContent>
     </Card>

@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Fade, Typography } from "@mui/material";
+import { Box, Button, Divider, Fade, Link, Typography } from "@mui/material";
 import React from "react";
 import { ProgressState } from "../Context/CanvasContext";
 
@@ -18,7 +18,7 @@ const Landing = () => {
           justifyContent: "center",
           width: "100%",
           height: "calc(100vh - 82px)",
-          overflow:"hidden",
+          overflow: "hidden",
           "@media (min-width:600px)": {
             height: "calc(100vh - 90px)",
           },
@@ -27,7 +27,7 @@ const Landing = () => {
         <Box
           sx={{
             position: "absolute",
-            borderRadius:"10px",
+            borderRadius: "10px",
             top: 0,
             left: 0,
             width: "100%",
@@ -39,7 +39,7 @@ const Landing = () => {
         >
           <Box
             sx={{
-              zIndex:"9",
+              zIndex: "9",
               // borderRadius:"10px",
               width: "100%",
               height: "100%",
@@ -47,7 +47,7 @@ const Landing = () => {
               top: 0,
               left: 0,
               backgroundImage:
-              "linear-gradient(to bottom, rgba(	14, 18, 22, 1), rgba(	14, 18, 22, 0.5))",
+                "linear-gradient(to bottom, rgba(	14, 18, 22, 1), rgba(	14, 18, 22, 0.5))",
             }}
           />
           <img className="landing-image" src="landing.jpg" />
@@ -58,19 +58,21 @@ const Landing = () => {
         <Typography variant="h2" sx={{ color: "light.main", zIndex: 1 }}>
           Front End Developer
         </Typography>
-        <Button
-          variant="outlined"
-          sx={{
-            marginTop: "16px",
-          }}
-          color="appeal"
-        >
-          Resume
-        </Button>
+        <Link href="./RT resume.pdf" target="_blank" rel="noopener">
+          <Button
+            variant="outlined"
+            sx={{
+              marginTop: "16px",
+            }}
+            color="appeal"
+          >
+            Resume
+          </Button>
+        </Link>
         <Divider
           orientation="vertical"
           sx={{
-            zIndex:9,
+            zIndex: 9,
             backgroundColor: "neutral.main",
             position: "absolute",
             bottom: "-18px",
