@@ -107,7 +107,7 @@ const Header = () => {
       }}
     >
       <Slide in={navbar && !intro} timeout={500}>
-        <Link href="http://localhost:3000/">
+        <Link href="https://roberttran.netlify.app/">
           <Typography variant="logo">Trebor</Typography>
         </Link>
       </Slide>
