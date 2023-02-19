@@ -66,7 +66,7 @@ const Landing = () => {
             }}
             color="appeal"
           >
-            Resume
+            My Resume
           </Button>
         </Link>
         <Divider
