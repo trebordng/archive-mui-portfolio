@@ -10,7 +10,7 @@ const Landing = () => {
       <Box
         id="Landing"
         sx={{
-          borderRadius: "10px",
+          borderRadius: "0 0 10px 10px",
           display: "flex",
           flexDirection: "column",
           position: "relative",
@@ -19,6 +19,8 @@ const Landing = () => {
           width: "100%",
           height: "calc(100vh - 82px)",
           overflow: "hidden",
+          "-webkit-mask-image":
+            " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC)" /* this fixes the overflow:hidden in Chrome/Opera */,
           "@media (min-width:600px)": {
             height: "calc(100vh - 90px)",
           },
@@ -27,7 +29,6 @@ const Landing = () => {
         <Box
           sx={{
             position: "absolute",
-            borderRadius: "10px",
             top: 0,
             left: 0,
             width: "100%",
@@ -40,7 +41,6 @@ const Landing = () => {
           <Box
             sx={{
               zIndex: "9",
-              // borderRadius:"10px",
               width: "100%",
               height: "100%",
               position: "sticky",
