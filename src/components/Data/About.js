@@ -1,11 +1,11 @@
 import {
   faAws,
-  faFigma,
   faGithub,
   faHtml5,
   faNodeJs,
   faReact,
   faSquareJs,
+  faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
 import { faCube } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "@mui/material";
@@ -49,10 +49,10 @@ export const SkillList = [
     title: "AWS Amplify",
   },
   {
-    icon: faFigma,
+    icon: faWordpress,
     description:
-      "Basic understanding of design tool such as Figma, Photoshop,...",
-    title: "Figma",
+      "Custom built site, maintenance and update",
+    title: "Wordpress",
   },
 ];
 
