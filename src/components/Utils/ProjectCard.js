@@ -64,11 +64,11 @@ const ProjectCard = (props) => {
                 height: "100%",
                 width: "100%",
                 filter: "grayscale(100%)",
-                opacity: "0.3",
+                opacity: "0.5",
                 transition: "all 0.5s",
                 "@media (min-width:900px)": {
                   "&:hover": {
-                    opacity: "0.7",
+                    opacity: "0.9",
                     filter: "none",
                   },
                 },
